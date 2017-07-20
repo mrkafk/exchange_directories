@@ -7,20 +7,24 @@ This is an OLD program, but it still works.
 # I did not write this program, merely host it here because it no longer seems to be available in old repository.
 # Actual author of the program is Frank B. Brokken.
 
+See `xd.README` for more details.
+
 # How it works
 
 1. compile the program
 
 `./build`
 
-2. add following function to your `.bash_profile`:
+2. copy `xd` binary somewhere to your PATH.
+
+3. add following function to your `.bash_profile`:
 
 function cx ()
 {
             cd `/usr/local/bin/xd \$*`
 }
 
-3. now, if you issue
+4. now, if you issue
 
 `cx ulb`
 
