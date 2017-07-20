@@ -19,10 +19,12 @@ See `xd.README` for more details.
 
 3. add following function to your `.bash_profile`:
 
+```
 function cx ()
 {
             cd `/usr/local/bin/xd \$*`
 }
+```
 
 4. now, if you issue
 
