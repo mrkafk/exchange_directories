@@ -1,0 +1,13 @@
+#!/bin/bash -x
+
+g++ -fpermissive -o xd *.cc */*.cc -s
+
+set +x
+echo
+echo "Copy the xd binary in this folder to your PATH somewhere."
+echo
+echo "Add the following to your .bash_profile:"
+
+cat .bash_profile
+
+

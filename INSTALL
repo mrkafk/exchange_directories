@@ -1,0 +1,88 @@
+This are the installation instructions for xd under Linux. Xd can also be used
+in the CYGWIN environment, see below for details.
+
+Quick Installation instruction:
+===============================
+
+1. Do as root in the directory where xd unpacked to:
+
+        install xd /usr/local/bin
+        
+to install the provided version of xd in /usr/local/bin
+
+2. Add the following alias to your csh.cshrc (or whatever file you use as
+your system-wide alias file):
+   
+        alias   xd  'cd `/usr/local/bin/xd \!*`'
+
+
+Extensive Installation Instruction:
+===================================
+
+Preliminaries:
+--------------
+
+You need icmake to compile xd yourself. Icmake may be obtained from
+ftp.icce.rug.nl/pub/unix
+
+If you don't have icmake, you have to compile and link all sources by hand.
+Limited support for this case is provided here.
+
+--------------
+
+Installation Instructions:
+--------------------------
+
+1. All instructions should be done from the directory where
+   the xd.X.YY.tgz archive unpacked to (i.e., xd/).
+2. (Obsolete)
+3. If preferred, edit the name of the configurationfile to be used.
+   to do this, edit in configure.h, the #define XD_CONFIG_PATH.
+   It is always relative to $HOME, and in the distribution it is set
+   to "/.conf/xd/xd.conf".
+4. Do (not necessarily as root)
+    ./build
+    Note that not all OSs use the -m486 compiler flag. Remove it from the 
+    `build' script if not applicable.
+    This creates in the current directory libxd.a and xd.
+    During the compilation, two warnings are generated.
+    They can safely be ignored.
+5. Do (as root)
+    install xd /usr/local/bin
+6. Add the following alias to your csh.cshrc (or whatever file you use as
+   your system-wide alias file):
+   
+    alias   xd      'cd `/usr/local/bin/xd \!*`'
+
+    When using bash, define
+
+    xd()
+    {
+        cd `/usr/local/bin/xd $*`
+    }
+
+    in your .profile
+
+XD on cygwin
+------------
+
+    If you want to use XD in the CYGWIN environment, uncomment 
+
+        // #define CYGWIN
+
+    in `build`. Compilation produces xd.exe, which may be installed in 
+    Cygwin's /usr/local/bin area.
+
+    If you don't want to use icmake (although it compiles out of the box
+    in the Cygwin environment) you can compile xd `by hand':
+
+    g++ -o xd.exe *.cc */*.cc -s
+
+Cleanup-instructions.
+---------------------
+
+Some simple cleanup may be required. The compilation left libxd.a and xd.
+All other intermediate compilation products were removed by build.
+
+If required, libxd.a and xd can be removed.
+

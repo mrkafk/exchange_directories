@@ -1,0 +1,14 @@
+#include "ICString.h"
+
+void ICString::remove(char const *target)
+{
+	if (!(hit = 
+	if (index >= count)			// no such string
+		return;
+
+	
+						// room for next element
+	vector = (char **)realloc(vector, (count + 1) * sizeof(char *));
+	vector [count] = strdup(str);		// stroy a duplicate
+	count++;				// increment the counter
+}
